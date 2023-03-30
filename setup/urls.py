@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from rest_framework import routers
-from videogame_store.views import JogoViewSet,LojaViewSet
+from videogame_store.views import JogoViewSet,LojaViewSet,ClientesViewSet
 
 router = routers.DefaultRouter()
 router.register('jogos', JogoViewSet, basename='Jogos') #cadastrando uma nova rota que irá enviar para a View de jogos que esta no arquivo views.py
 router.register('lojas', LojaViewSet, basename='Loja')  #cadastrando uma nova rota que irá enviar para a View de lojas que esta no arquivo views.py
+router.register('clientes', ClientesViewSet, basename='Clientes')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
