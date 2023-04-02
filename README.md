@@ -21,8 +21,7 @@
 ## Observações do codigo
     * Foi feita relacionamento com entidades no arquivo models.py, fazendo a ligação do id do carro com o carro que o cliente alugou:
 
-    ```
-    class Carro(models.Model):
+    ```class Carro(models.Model):
         id = models.UUIDField(primary_key=True,default=uuid4,editable=False)
 
     class Cliente(models.Model):
@@ -30,8 +29,7 @@
     ```
 
     * Também foi feito a paginação no arquivo views.py, para limitação de 20 objetos por página:
-    ```
-        from django.core.paginator import Paginator
+    ```from django.core.paginator import Paginator
         class CarroViewSet(viewsets.ModelViewSet):
             queryset = Carro.objects.all().order_by('id')
             serializer_class = CarroSerializer
