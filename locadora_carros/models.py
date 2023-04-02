@@ -18,7 +18,7 @@ class Cliente(models.Model):
     cpf = models.CharField(max_length=100)
     endereco = models.CharField(max_length=100)
     telefone = models.CharField(max_length=100)
-    id_carro_alugado = models.CharField(max_length=100)
+    id_carro_alugado = models.ForeignKey(Carro, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome
